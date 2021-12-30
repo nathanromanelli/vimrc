@@ -37,8 +37,6 @@ autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
 autocmd BufNewFile *.cpp 0r C:\Users\hamsq\vimws\Template\template.cpp
 
-
-"???
 set nu
 augroup numbertoggle
     autocmd!
