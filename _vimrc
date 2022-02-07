@@ -11,8 +11,14 @@ set mouse=a
 " Fullscreen
 au GUIEnter * simalt ~x
 
-"disable annoying fucking bells
+"Disable annoying bells
 set belloff=all
+
+" disable backup/undo files
+set undodir=C:\Vim\undo
+set undofile
+set backupdir =C:\Vim\backup
+set writebackup
 
 "random
 set hls
@@ -25,17 +31,18 @@ set si
 
 "macros
 inoremap { {}<Left>
-inoremap {<CR> {<CR>}<Esc> 
+inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
 
 "compile shortcuts
 " autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
 " autocmd filetype cpp nnoremap <F10> :!%:r<CR>
-autocmd filetype cpp nnoremap <F9> :w <bar> :!g++ % -o %:r -Wl,--stack,268435456 && ./%:r<CR>
-autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
+autocmd filetype cpp nnoremap <F9> :w <bar> :!g++ % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype cpp nnoremap <F10> :!%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
 autocmd BufNewFile *.cpp 0r C:\Users\hamsq\vimws\Template\template.cpp
+
 
 set nu
 augroup numbertoggle
